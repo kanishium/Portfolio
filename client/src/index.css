@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Clash Display', sans-serif;
+}
+
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}

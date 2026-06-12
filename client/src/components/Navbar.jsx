@@ -27,7 +27,7 @@ const Navbar = () => {
     return (
         <>
             {/* Top Navigation Bar */}
-            <nav className={`w-full flex items-center justify-between px-8 py-5 relative z-[60] font-sans text-xs font-semibold tracking-widest text-white uppercase transition-all duration-500 ${isMenuOpen ? 'bg-transparent border-transparent' : 'bg-black/80 backdrop-blur-sm '}`}>
+            <nav className={`w-full flex items-center justify-between px-8 py-5 relative z-[60] font-sans text-s font-semibold tracking-wide text-white uppercase transition-all duration-500 ${isMenuOpen ? 'bg-transparent border-transparent' : 'bg-black/80 backdrop-blur-sm '}`}>
                 {/* Left: Local Time linking to Home */}
                 <div className="flex-1 flex items-center">
                     <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-white/70 hover:text-white transition-colors duration-300">
@@ -38,7 +38,7 @@ const Navbar = () => {
                 {/* Center: Toggle Button */}
                 <div className="flex-1 flex justify-center items-center">
                     <button
-                        className="group p-4 flex justify-center items-center focus:outline-none"
+                        className="group w-14 h-14 flex justify-center items-center focus:outline-none"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                         {isMenuOpen ? (
@@ -63,7 +63,7 @@ const Navbar = () => {
                 {/* Right: Contact Button */}
                 <div className="flex-1 flex justify-end">
                     <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                        <button className="border border-white hover:bg-white hover:text-black rounded-full px-6 py-2.5 transition-colors duration-300 text-[10px] tracking-[0.2em] font-bold">
+                        <button className="border border-white hover:bg-white hover:text-black rounded-full px-6 py-2.5 transition-colors duration-300 text-xs tracking-[0.2em] font-bold">
                             CONTACT NOW
                         </button>
                     </Link>

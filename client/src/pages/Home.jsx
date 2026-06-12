@@ -1,5 +1,13 @@
 import React from 'react';
 import MyPic from '../assets/MyPic.png';
+import ToolsMarquee from '../components/ToolsMarquee';
+import PortfolioSection from '../components/PortfolioSection';
+import AboutSection from '../components/AboutSection';
+import ServicesSection from '../components/ServicesSection';
+import VoiceSection from '../components/VoiceSection';
+import StatsSection from '../components/StatsSection';
+import ExperienceSection from '../components/ExperienceSection';
+
 const Home = () => {
     return (
         <main className="flex-grow flex flex-col relative z-10 w-full">
@@ -75,19 +83,19 @@ const Home = () => {
                 </div>
 
                 {/* Big Typography Section */}
-                <div className="flex flex-col items-center justify-center text-center pb-24 w-full">
+                <div className="flex flex-col items-center justify-center text-center pb-14 w-full">
                     <h2 className="text-[12vw] md:text-[120px] lg:text-[100px] font-semibold uppercase leading-[0.8] tracking-[-0.04em] w-full text-white">
                         I'm KANISHK BASED<br />
                         IN MEErut, INDIA.
                     </h2>
 
                     <p className="text-[13px] md:text-[15px] text-white/50 max-w-md text-center leading-relaxed font-medium tracking-wide mt-12">
-                        I employed responsive designskills to maintain consistency across all devices.
+                        I crafted responsive interfaces ensuring seamless experiences across all devices.
                     </p>
                 </div>
 
                 {/* Timeline / 3 Steps */}
-                <div className="w-full max-w-[800px] mx-auto relative flex items-center justify-between pb-32">
+                <div className="w-full max-w-[850px] mx-auto relative flex items-center justify-between pb-10">
                     {/* Connecting Line */}
                     <div className="absolute left-8 right-8 h-[1px] bg-white/10 top-1/2 -translate-y-1/2 z-0"></div>
 
@@ -113,7 +121,7 @@ const Home = () => {
             </section>
 
             {/* --- PHASES FEATURES SECTION --- */}
-            <section className="w-full px-8 pb-32 max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 text-center relative z-10">
+            <section className="w-full px-8 pb-24 max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 text-center relative z-10">
                 {/* Phase 1 */}
                 <div className="flex flex-col items-center">
                     {/* Dots */}
@@ -123,12 +131,12 @@ const Home = () => {
                         <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
                     </div>
                     {/* Images */}
-                    <div className="flex justify-center -space-x-3 mb-8">
+                    <div className="flex justify-center -space-x-3 mb-4">
                         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" className="w-12 h-12 rounded-xl object-cover border-2 border-black relative z-10" alt="1" />
                         <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" className="w-12 h-12 rounded-xl object-cover border-2 border-black relative z-20 shadow-xl scale-110" alt="2" />
                         <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop" className="w-12 h-12 rounded-xl object-cover border-2 border-black relative z-10" alt="3" />
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold uppercase tracking-tighter text-white mb-4">
+                    <h3 className="text-xl md:text-2xl font-semibold uppercase tracking-wide text-white mb-4">
                         DISCOVER AND ANALYSIS
                     </h3>
                     <p className="text-sm md:text-[15px] text-white/50 max-w-[260px] mx-auto leading-relaxed">
@@ -145,12 +153,12 @@ const Home = () => {
                         <div className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
                     </div>
                     {/* Images */}
-                    <div className="flex justify-center -space-x-3 mb-8">
+                    <div className="flex justify-center -space-x-3 mb-4">
                         <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100&h=100&fit=crop" className="w-12 h-12 rounded-xl object-cover border-2 border-black relative z-10" alt="1" />
-                        <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=100&h=100&fit=crop" className="w-12 h-12 rounded-xl object-cover border-2 border-black relative z-20 shadow-xl scale-110" alt="2" />
-                        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=100&h=100&fit=crop" className="w-12 h-12 rounded-xl object-cover border-2 border-black relative z-10" alt="3" />
+                        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=100&h=100&fit=crop" className="w-12 h-12 rounded-xl object-cover border-2 border-black relative z-20 shadow-xl scale-110" alt="3" />
+                        <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=100&h=100&fit=crop" className="w-12 h-12 rounded-xl object-cover border-2 border-black relative z-10" alt="2" />
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold uppercase tracking-tighter text-white mb-4">
+                    <h3 className="text-xl md:text-2xl font-semibold uppercase tracking-wide text-white mb-4">
                         DESIGN AND IMPLEMENT
                     </h3>
                     <p className="text-sm md:text-[15px] text-white/50 max-w-[260px] mx-auto leading-relaxed">
@@ -167,12 +175,12 @@ const Home = () => {
                         <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
                     </div>
                     {/* Images */}
-                    <div className="flex justify-center -space-x-3 mb-8">
+                    <div className="flex justify-center -space-x-3 mb-4">
                         <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=100&h=100&fit=crop" className="w-12 h-12 rounded-xl object-cover border-2 border-black relative z-10" alt="1" />
                         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" className="w-12 h-12 rounded-xl object-cover border-2 border-black relative z-20 shadow-xl scale-110" alt="2" />
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" className="w-12 h-12 rounded-xl object-cover border-2 border-black relative z-10" alt="3" />
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold uppercase tracking-tighter text-white mb-4">
+                    <h3 className="text-xl md:text-2xl font-semibold uppercase tracking-wide text-white mb-4">
                         DELIVER AND MONITOR
                     </h3>
                     <p className="text-sm md:text-[15px] text-white/50 max-w-[260px] mx-auto leading-relaxed">
@@ -180,6 +188,14 @@ const Home = () => {
                     </p>
                 </div>
             </section>
+
+            <ToolsMarquee />
+            <PortfolioSection />
+            <AboutSection />
+            <ServicesSection />
+            <VoiceSection />
+            <StatsSection />
+            <ExperienceSection />
         </main>
     );
 };

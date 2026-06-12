@@ -60,11 +60,25 @@ const Navbar = () => {
                     </button>
                 </div>
 
-                {/* Right: Contact Button */}
-                <div className="flex-1 flex justify-end">
+                {/* Right: Resume & Contact Buttons */}
+                <div className="flex-1 flex justify-end items-center gap-4 hidden sm:flex">
+                    <a href="/resume.pdf" download="Kanishk_Resume.pdf">
+                        <button className="btn-custom btn-filled border border-white rounded-full px-6 py-2.5 text-xs tracking-[0.2em] font-bold">
+                            <span className="relative z-10">RESUME</span>
+                        </button>
+                    </a>
                     <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                         <button className="btn-custom btn-outline border border-white rounded-full px-6 py-2.5 text-xs tracking-[0.2em] font-bold">
                             <span className="relative z-10">CONTACT NOW</span>
+                        </button>
+                    </Link>
+                </div>
+                
+                {/* Mobile version (only contact to save space, or stack them) */}
+                <div className="flex-1 flex justify-end items-center gap-2 sm:hidden">
+                    <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                        <button className="btn-custom btn-outline border border-white rounded-full px-4 py-2 text-[10px] tracking-[0.1em] font-bold">
+                            <span className="relative z-10">CONTACT</span>
                         </button>
                     </Link>
                 </div>

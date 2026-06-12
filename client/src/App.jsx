@@ -10,12 +10,23 @@ import Navbar from './components/Navbar'
 import CustomCursor from './components/CustomCursor'
 import Footer from './components/Footer'
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 const AppContent = () => {
   const location = useLocation();
   const isContactPage = location.pathname === '/contact';
 
   return (
     <div className="min-h-screen bg-black flex flex-col selection:bg-white selection:text-black font-sans text-white relative">
+      <ScrollToTop />
       {/* Global Grid Background */}
       <div className="fixed inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0"></div>
 

@@ -63,42 +63,42 @@ const Contact = () => {
                     </h3>
 
                     <form className="flex flex-col gap-4 w-full" onSubmit={handleSubmit}>
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            placeholder="Name*" 
+                            placeholder="Name*"
                             className="w-full bg-[#111111] border border-white/5 rounded-xl px-6 py-4 text-white placeholder-white/30 text-sm focus:outline-none focus:border-white/30 transition-colors"
                         />
-                        <input 
-                            type="email" 
+                        <input
+                            type="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
                             required
-                            placeholder="Email*" 
+                            placeholder="Email*"
                             className="w-full bg-[#111111] border border-white/5 rounded-xl px-6 py-4 text-white placeholder-white/30 text-sm focus:outline-none focus:border-white/30 transition-colors"
                         />
-                        <textarea 
+                        <textarea
                             name="message"
                             value={formData.message}
                             onChange={handleChange}
                             required
-                            placeholder="Message*" 
+                            placeholder="Message*"
                             rows={6}
                             className="w-full bg-[#111111] border border-white/5 rounded-xl px-6 py-4 text-white placeholder-white/30 text-sm focus:outline-none focus:border-white/30 transition-colors resize-none"
                         ></textarea>
-                        
+
                         {status.message && (
                             <div className={`p-3 rounded-lg text-xs font-medium ${status.type === 'success' ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}>
                                 {status.message}
                             </div>
                         )}
 
-                        <button 
-                            type="submit" 
+                        <button
+                            type="submit"
                             disabled={isSubmitting}
                             className="btn-custom btn-filled w-full font-bold text-xs uppercase tracking-[0.1em] py-4 rounded-xl mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
@@ -141,14 +141,13 @@ const Contact = () => {
                         <h4 className="text-[9px] font-bold text-white/30 uppercase tracking-[0.2em] mb-2">PHONE</h4>
                         <div className="flex gap-4">
                             <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.1em] text-white/50">IND</span>
-                            <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.1em]">+91 98765 43210</span>
+                            <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.1em]">+91 93896 62727</span>
                         </div>
                     </div>
                     {/* EMAIL ME */}
                     <div className="flex flex-col gap-4">
                         <h4 className="text-[9px] font-bold text-white/30 uppercase tracking-[0.2em] mb-2">EMAIL ME</h4>
-                        <a href="mailto:contact@kanishk.com" className="text-[10px] md:text-xs font-bold uppercase tracking-[0.1em] hover:text-white/50 transition-colors">HELLO@KANISHK.DEV</a>
-                        <a href="mailto:work@kanishk.com" className="text-[10px] md:text-xs font-bold uppercase tracking-[0.1em] hover:text-white/50 transition-colors">WORK@KANISHK.DEV</a>
+                        <a href="mailto:[EMAIL_ADDRESS]" className="text-[10px] md:text-xs font-bold uppercase tracking-[0.1em] hover:text-white/50 transition-colors">Kanishk@dev</a>
                     </div>
                 </div>
 

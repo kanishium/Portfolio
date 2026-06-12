@@ -1,13 +1,11 @@
-import React, { useRef, useState } from 'react';
-import AiResume from '../assets/AiResume.png';
-import AdmissionPlatform from '../assets/AdmissionPlatform.png';
-import Trion from '../assets/Trion.png';
-import MyPortfolio from '../assets/MyPortfolio.png';
-import BurgerNation from '../assets/BurgerNation.png';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import projects from '../data/projects';
+import useReveal from '../hooks/useReveal';
 
-const ProjectCard = ({ title, image, stars, category }) => {
+const ProjectCard = ({ title, image, stars, category, slug }) => {
     return (
-        <div className="group flex flex-col gap-5 cursor-none w-full">
+        <Link to={`/work/${slug}`} className="group flex flex-col gap-5 cursor-none w-full block">
             <div
                 data-cursor-text="VIEW"
                 className="w-full overflow-hidden rounded-xl border border-white/10 bg-[#0a0a0a] relative aspect-[4/3] md:aspect-video cursor-none"
@@ -37,13 +35,16 @@ const ProjectCard = ({ title, image, stars, category }) => {
                     </svg>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
 const PortfolioSection = () => {
+    const p = (slug) => projects.find((proj) => proj.slug === slug);
+    const revealRef = useReveal();
+
     return (
-        <section className="w-full px-8 max-w-[1400px] mx-auto relative z-10 border-[#ffffff15]">
+        <section ref={revealRef} className="w-full px-8 max-w-[1400px] mx-auto relative z-10 border-[#ffffff15]">
             {/* Header */}
             <div className="flex flex-col mb-24 md:mb-32">
                 {/* Top Labels */}
@@ -55,7 +56,7 @@ const PortfolioSection = () => {
 
                 {/* Main Title & Paragraph */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 md:gap-16">
-                    <h2 className="text-[15vw] md:text-[10vw] xl:text-[130px] font-semibold uppercase leading-[0.8] tracking-tight text-white m-0">
+                    <h2 className="reveal text-[15vw] md:text-[10vw] xl:text-[130px] font-semibold uppercase leading-[0.8] tracking-tight text-white m-0">
                         LATEST<br />PORTFOLIO
                     </h2>
                     <p className="text-sm md:text-base text-white max-w-[300px] font-semibold leading-relaxed mb-2 md:mb-4">
@@ -70,18 +71,20 @@ const PortfolioSection = () => {
                 <div className="flex flex-col md:flex-row justify-between items-start gap-24 md:gap-8">
                     <div className="w-full md:w-[45%]">
                         <ProjectCard
-                            title="AI Resume Builder"
-                            category="AI / WEB DEV"
-                            stars={4}
-                            image={AiResume}
+                            slug="ai-resume-builder"
+                            title={p('ai-resume-builder').title}
+                            category={p('ai-resume-builder').category}
+                            stars={p('ai-resume-builder').stars}
+                            image={p('ai-resume-builder').image}
                         />
                     </div>
                     <div className="w-full md:w-[40%] md:mt-25">
                         <ProjectCard
-                            title="Trion"
-                            category="BRANDING / WEB DEV"
-                            stars={3}
-                            image={Trion}
+                            slug="trion"
+                            title={p('trion').title}
+                            category={p('trion').category}
+                            stars={p('trion').stars}
+                            image={p('trion').image}
                         />
                     </div>
                 </div>
@@ -90,10 +93,11 @@ const PortfolioSection = () => {
                 <div className="flex justify-center w-full md:my-12 relative z-10">
                     <div className="w-full md:w-[50%]">
                         <ProjectCard
-                            title="Admission platform"
-                            category="EDUCATION / WEB PLATFORM"
-                            stars={3}
-                            image={AdmissionPlatform}
+                            slug="admission-platform"
+                            title={p('admission-platform').title}
+                            category={p('admission-platform').category}
+                            stars={p('admission-platform').stars}
+                            image={p('admission-platform').image}
                         />
                     </div>
                 </div>
@@ -102,18 +106,20 @@ const PortfolioSection = () => {
                 <div className="flex flex-col md:flex-row justify-between items-end gap-24 md:gap-8">
                     <div className="w-full md:w-[40%] md:-mt-24">
                         <ProjectCard
-                            title="Personal Portfolio"
-                            category="UI/UX / WEB DEV"
-                            stars={4}
-                            image={MyPortfolio}
+                            slug="personal-portfolio"
+                            title={p('personal-portfolio').title}
+                            category={p('personal-portfolio').category}
+                            stars={p('personal-portfolio').stars}
+                            image={p('personal-portfolio').image}
                         />
                     </div>
                     <div className="w-full md:w-[45%] md:mt-14">
                         <ProjectCard
-                            title="Burger Nation"
-                            category="FOOD / WEB DEV"
-                            stars={5}
-                            image={BurgerNation}
+                            slug="burger-nation"
+                            title={p('burger-nation').title}
+                            category={p('burger-nation').category}
+                            stars={p('burger-nation').stars}
+                            image={p('burger-nation').image}
                         />
                     </div>
                 </div>

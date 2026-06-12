@@ -63,8 +63,8 @@ const Navbar = () => {
                 {/* Right: Contact Button */}
                 <div className="flex-1 flex justify-end">
                     <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                        <button className="border border-white hover:bg-white hover:text-black rounded-full px-6 py-2.5 transition-colors duration-300 text-xs tracking-[0.2em] font-bold">
-                            CONTACT NOW
+                        <button className="btn-custom btn-outline border border-white rounded-full px-6 py-2.5 text-xs tracking-[0.2em] font-bold">
+                            <span className="relative z-10">CONTACT NOW</span>
                         </button>
                     </Link>
                 </div>
@@ -78,7 +78,7 @@ const Navbar = () => {
                 {/* Menu Links */}
                 <div className="flex-grow flex flex-col justify-center items-center relative z-10 w-full">
                     <div className="flex flex-col items-center justify-center text-center -mt-8">
-                        <Link to="/about" onClick={() => setIsMenuOpen(false)} className="text-[min(12vw,14vh)] md:text-[min(9vw,14vh)] xl:text-[min(7.5vw,110px)] font-bold leading-[0.85] tracking-wide uppercase whitespace-nowrap text-white/40 hover:text-white transition-colors duration-300">ABOUT</Link>
+                        <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-[min(12vw,14vh)] md:text-[min(9vw,14vh)] xl:text-[min(7.5vw,110px)] font-bold leading-[0.85] tracking-wide uppercase whitespace-nowrap text-white/40 hover:text-white transition-colors duration-300">HOME</Link>
                         <Link to="/work" onClick={() => setIsMenuOpen(false)} className="text-[min(12vw,14vh)] md:text-[min(9vw,14vh)] xl:text-[min(7.5vw,110px)] font-bold leading-[0.85] tracking-wide uppercase whitespace-nowrap text-white hover:text-white/70 transition-colors duration-300">WORK</Link>
                         <Link to="/experience" onClick={() => setIsMenuOpen(false)} className="text-[min(12vw,14vh)] md:text-[min(9vw,14vh)] xl:text-[min(7.5vw,110px)] font-bold leading-[0.85] tracking-wide uppercase whitespace-nowrap text-white hover:text-white/70 transition-colors duration-300">EXPERIENCE</Link>
                         <Link to="/achievements" onClick={() => setIsMenuOpen(false)} className="text-[min(12vw,14vh)] md:text-[min(9vw,14vh)] xl:text-[min(7.5vw,110px)] font-bold leading-[0.85] tracking-wide uppercase whitespace-nowrap text-white hover:text-white/70 transition-colors duration-300">ACHIEVEMENTS</Link>
@@ -90,9 +90,9 @@ const Navbar = () => {
                 <div className="w-full flex justify-between items-center text-[10px] font-bold tracking-[0.2em] text-white/70 relative z-10 uppercase mt-auto">
                     <div>©2026 ALL RIGHTS RESERVED</div>
                     <div className="hidden md:flex gap-8">
-                        <a href="#" className="hover:text-white flex items-center gap-1">INSTAGRAM ↗</a>
-                        <a href="#" className="hover:text-white flex items-center gap-1">DRIBBBLE ↗</a>
-                        <a href="#" className="hover:text-white flex items-center gap-1">TWITTER ↗</a>
+                        <a href="https://www.instagram.com/kanishk9394/" className="hover:text-white flex items-center gap-1">INSTAGRAM ↗</a>
+                        <a href="https://www.linkedin.com/in/kanishk-kumar-33530729b/" className="hover:text-white flex items-center gap-1">Linkedin ↗</a>
+                        <a href="https://github.com/kanishium" className="hover:text-white flex items-center gap-1">Github ↗</a>
                     </div>
                 </div>
             </div>

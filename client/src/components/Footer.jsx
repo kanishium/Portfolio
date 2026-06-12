@@ -1,20 +1,22 @@
 import React from 'react';
 import MyPic from '../assets/MyPic.png';
+import useReveal from '../hooks/useReveal';
 
 const Footer = () => {
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+    const revealRef = useReveal();
 
     return (
-        <footer className="w-full relative z-10 text-white pb-8 overflow-hidden border-t border-white/10 mt-0">
+        <footer ref={revealRef} className="w-full relative z-10 text-white pb-8 overflow-hidden border-t border-white/10 mt-0">
             {/* Top CTA */}
             <div className="flex flex-col items-center text-center px-4 pt-32">
-                <h2 className="text-[13vw] md:text-[10vw] font-semibold uppercase leading-[0.75] tracking-tight">
+                <h2 className="reveal text-[13vw] md:text-[10vw] font-semibold uppercase leading-[0.75] tracking-tight">
                     LET'S WORK<br />TOGETHER
                 </h2>
-                <a href="/contact" className="mt-12 bg-white text-black font-bold text-[14px] md:text-[15px] uppercase tracking-[0.15em] px-5 py-2 rounded-full hover:bg-white/90 transition-all hover:scale-105">
-                    CONTACT NOW
+                <a href="/contact" className="btn-custom btn-filled mt-12 font-bold text-[14px] md:text-[15px] uppercase tracking-[0.15em] px-5 py-2 rounded-full hover:scale-105 transition-all">
+                    <span className="relative z-10">CONTACT NOW</span>
                 </a>
             </div>
 
@@ -50,9 +52,9 @@ const Footer = () => {
 
                 {/* Social Links */}
                 <div className="flex gap-6 md:gap-10 text-[10px] md:text-[14px] font-bold uppercase tracking-[0.15em] mb-24">
-                    <a href="#" className="hover:text-white/50 transition-colors">INSTAGRAM ↗</a>
-                    <a href="#" className="hover:text-white/50 transition-colors">LINKEDIN ↗</a>
-                    <a href="#" className="hover:text-white/50 transition-colors">GITHUB ↗</a>
+                    <a href="https://www.instagram.com/kanishk9394/" className="hover:text-white/50 transition-colors">INSTAGRAM ↗</a>
+                    <a href="https://www.linkedin.com/in/kanishk-kumar-33530729b/" className="hover:text-white/50 transition-colors">LINKEDIN ↗</a>
+                    <a href="https://github.com/kanishium" className="hover:text-white/50 transition-colors">GITHUB ↗</a>
                 </div>
             </div>
 

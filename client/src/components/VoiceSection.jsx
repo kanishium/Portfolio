@@ -1,5 +1,11 @@
 import React from 'react';
 import MyPic from '../assets/MyPic.png';
+import github from '../assets/github.png';
+import swags from '../assets/swags.png';
+import leetcode from '../assets/leetcode.png';
+import Trion from '../assets/Trion.png';
+import MyPortfolio from '../assets/MyPortfolio.png';
+import professional from '../assets/professional.png';
 
 const VoiceSection = () => {
     return (
@@ -32,15 +38,15 @@ const VoiceSection = () => {
                     <div className="flex justify-between items-start max-w-5xl mx-auto px-6 gap-8">
                         <div className="w-[35%] md:w-[28%] rounded-2xl overflow-hidden shadow-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=500&auto=format&fit=crop"
-                                alt="Urban"
+                                src={github}
+                                alt="Github"
                                 className="w-full h-[35vh] md:h-[40vh] object-cover"
                             />
                         </div>
                         <div className="w-[35%] md:w-[28%] rounded-2xl overflow-hidden shadow-2xl mt-102">
                             <img
-                                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=500&auto=format&fit=crop"
-                                alt="Creative"
+                                src={swags}
+                                alt="Swags"
                                 className="w-full h-[35vh] md:h-[40vh] object-cover"
                             />
                         </div>
@@ -50,8 +56,8 @@ const VoiceSection = () => {
                     <div className="flex justify-center mt-50 px-6">
                         <div className="w-[25%] md:w-[18%] rounded-xl overflow-hidden shadow-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=500&auto=format&fit=crop"
-                                alt="Light"
+                                src={leetcode}
+                                alt="Leetcode"
                                 className="w-full h-[25vh] md:h-[30vh] object-cover"
                             />
                         </div>
@@ -61,15 +67,15 @@ const VoiceSection = () => {
                     <div className="flex justify-between items-start max-w-5xl mx-auto px-6 gap-8 mt-50">
                         <div className="w-[30%] md:w-[24%] rounded-2xl overflow-hidden shadow-2xl mt-70">
                             <img
-                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=500&auto=format&fit=crop"
-                                alt="Portrait"
+                                src={Trion}
+                                alt="Trion"
                                 className="w-full h-[30vh] md:h-[35vh] object-cover"
                             />
                         </div>
                         <div className="w-[30%] md:w-[24%] rounded-2xl overflow-hidden shadow-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=500&auto=format&fit=crop"
-                                alt="Music"
+                                src={MyPortfolio}
+                                alt="MyPortfolio"
                                 className="w-full h-[30vh] md:h-[35vh] object-cover"
                             />
                         </div>
@@ -79,8 +85,8 @@ const VoiceSection = () => {
                     <div className="flex justify-center mt-65 px-6 pb-24">
                         <div className="w-[55%] md:w-[35%] rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.8)] border border-white/10">
                             <img
-                                src={MyPic}
-                                alt="Kanishk Kumar"
+                                src={professional}
+                                alt="Professional"
                                 className="w-full h-[55vh] md:h-[70vh] object-cover object-top"
                             />
                         </div>

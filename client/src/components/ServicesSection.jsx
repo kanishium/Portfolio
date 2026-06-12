@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useReveal from '../hooks/useReveal';
 
 const servicesData = [
     {
@@ -65,9 +66,10 @@ const servicesData = [
 
 const ServicesSection = () => {
     const [activeIndex, setActiveIndex] = useState(0);
+    const revealRef = useReveal();
 
     return (
-        <section className="w-full relative z-10 text-white pb-12">
+        <section ref={revealRef} className="w-full relative z-10 text-white pb-12">
             {/* Top Labels */}
             <div className="w-full px-8 max-w-[1400px] mx-auto flex justify-between items-center text-[10px] md:text-[11px] uppercase tracking-[0.25em] font-bold text-white/50 pt-10 pb-8 border-t border-white/10 mt-12">
                 <div className="flex-1 text-left">04</div>
@@ -78,7 +80,7 @@ const ServicesSection = () => {
             {/* Header Content */}
             <div className="max-w-[1400px] mx-auto px-8 flex flex-col lg:flex-row mt-12 mb-24 gap-12">
                 <div className="w-full lg:w-[40%]">
-                    <h2 className="text-[14vw] md:text-[9vw] font-semibold uppercase leading-[0.8] tracking-tight">
+                    <h2 className="reveal text-[14vw] md:text-[9vw] font-semibold uppercase leading-[0.8] tracking-tight">
                         PRO
                         <br />
                         SERVICES

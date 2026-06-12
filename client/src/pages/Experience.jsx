@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import useReveal from '../hooks/useReveal';
 
 const experiences = [
     {
@@ -99,12 +100,14 @@ const SkillBar = ({ name, level }) => {
 };
 
 const Experience = () => {
+    const revealRef = useReveal();
+
     return (
-        <section className="w-full relative z-10 text-white">
+        <section ref={revealRef} className="w-full relative z-10 text-white">
             {/* ========== HERO ========== */}
             <div className="flex flex-col items-center justify-center mt-38 mb-32 px-4">
                 <h2 className="text-white/50 text-[9px] md:text-[13px] mb-4 font-medium tracking-[0.2em] uppercase">(2023 - PRESENT)</h2>
-                <h1 className="text-[15vw] md:text-[10vw] xl:text-[130px] text-center font-semibold uppercase leading-[0.8] tracking-tight text-white m-0">
+                <h1 className="reveal text-[15vw] md:text-[10vw] xl:text-[130px] text-center font-semibold uppercase leading-[0.8] tracking-tight text-white m-0">
                     WORK<br />EXPERIENCE
                 </h1>
             </div>
@@ -177,7 +180,7 @@ const Experience = () => {
                 <div className="flex flex-col lg:flex-row gap-16 mt-12 mb-32">
                     {/* Left: Heading */}
                     <div className="w-full lg:w-[35%]">
-                        <h2 className="text-[12vw] md:text-[4vw] font-semibold uppercase leading-none tracking-tight lg:sticky lg:top-32">
+                        <h2 className="reveal text-[12vw] md:text-[4vw] font-semibold uppercase leading-none tracking-tight lg:sticky lg:top-32">
                             TECH<br />STACK
                         </h2>
                     </div>
@@ -203,7 +206,7 @@ const Experience = () => {
                 <div className="flex flex-col lg:flex-row gap-16 mt-12">
                     {/* Left: Heading */}
                     <div className="w-full lg:w-[35%]">
-                        <h2 className="text-[12vw] md:text-[4vw] font-semibold uppercase leading-none tracking-tight lg:sticky lg:top-32">
+                        <h2 className="reveal text-[12vw] md:text-[4vw] font-semibold uppercase leading-none tracking-tight lg:sticky lg:top-32">
                             EDUCATION
                         </h2>
                     </div>

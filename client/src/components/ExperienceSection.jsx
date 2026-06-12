@@ -1,4 +1,5 @@
 import React from 'react';
+import useReveal from '../hooks/useReveal';
 
 const experiences = [
     {
@@ -28,8 +29,10 @@ const experiences = [
 ];
 
 const ExperienceSection = () => {
+    const revealRef = useReveal();
+
     return (
-        <section className="w-full relative z-10 text-white pb-32">
+        <section ref={revealRef} className="w-full relative z-10 text-white pb-32">
             {/* Top Labels */}
             <div className="w-full px-8 max-w-[1400px] mx-auto flex justify-between items-center text-[10px] md:text-[11px] uppercase tracking-[0.25em] font-bold text-white/50 pt-10 pb-8 border-t border-white/10 mt-12">
                 <div className="flex-1 text-left relative">
@@ -44,7 +47,7 @@ const ExperienceSection = () => {
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-8">
                     {/* Left Column: Heading */}
                     <div className="w-full lg:w-[40%]">
-                        <h2 className="text-[12vw] md:text-[4vw] font-semibold uppercase leading-none tracking-wide lg:sticky lg:top-32">
+                        <h2 className="reveal text-[12vw] md:text-[4vw] font-semibold uppercase leading-none tracking-wide lg:sticky lg:top-32">
                             EXPERIENCE
                         </h2>
                     </div>

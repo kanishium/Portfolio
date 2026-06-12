@@ -1,4 +1,5 @@
 import React from 'react';
+import useReveal from '../hooks/useReveal';
 import MyPic from '../assets/MyPic.png';
 import ToolsMarquee from '../components/ToolsMarquee';
 import PortfolioSection from '../components/PortfolioSection';
@@ -9,14 +10,17 @@ import StatsSection from '../components/StatsSection';
 import ExperienceSection from '../components/ExperienceSection';
 
 const Home = () => {
+    const revealRef = useReveal();
+
     return (
-        <main className="flex-grow flex flex-col relative z-10 w-full">
+        <main ref={revealRef} className="flex-grow flex flex-col relative z-10 w-full">
+
 
             {/* --- HERO SECTION --- */}
             <section className="min-h-[calc(100vh-80px)] flex flex-col">
                 {/* KANISHK Text */}
                 <div className="flex-grow flex items-center justify-center w-full px-4 overflow-hidden">
-                    <h1 className="text-[19vw] md:text-[15vw] lg:text-[15vw] xl:text-[17.5rem] font-bold tracking-tighter text-white uppercase leading-none font-sans select-none text-center" style={{ transform: 'scaleY(1.1)' }}>
+                    <h1 className="anim-hero-title text-[19vw] md:text-[15vw] lg:text-[15vw] xl:text-[17rem] font-bold tracking-tight text-white uppercase leading-none font-sans select-none text-center" style={{ transform: 'scaleY(1.1)' }}>
                         KANISHK
                     </h1>
                 </div>
@@ -24,7 +28,7 @@ const Home = () => {
                 {/* Bottom Stats / Info Row */}
                 <div className="w-full grid grid-cols-1 md:grid-cols-3 border-t border-[#ffffff15] relative mt-auto">
                     {/* Location */}
-                    <div className="flex flex-col items-center justify-center p-8 border-r border-[#ffffff15] text-center hover:bg-white/5 transition-colors duration-500">
+                    <div className="anim-hero-stats-1 flex flex-col items-center justify-center p-8 border-r border-[#ffffff15] text-center hover:bg-white/5 transition-colors duration-500">
                         <svg className="w-6 h-6 mb-4 text-[#00ff66]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 21s-7-6.5-7-11a7 7 0 1114 0c0 4.5-7 11-7 11z" />
                             <circle cx="12" cy="10" r="3" />
@@ -36,7 +40,7 @@ const Home = () => {
                     </div>
 
                     {/* Worldwide */}
-                    <div className="flex flex-col items-center justify-center p-8 border-r border-[#ffffff15] text-center hover:bg-white/5 transition-colors duration-500">
+                    <div className="anim-hero-stats-2 flex flex-col items-center justify-center p-8 border-r border-[#ffffff15] text-center hover:bg-white/5 transition-colors duration-500">
                         <svg className="w-6 h-6 mb-4 text-white/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                             <circle cx="12" cy="12" r="10" />
                             <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(90 12 12)" />
@@ -49,7 +53,7 @@ const Home = () => {
                     </div>
 
                     {/* Role */}
-                    <div className="flex flex-col items-center justify-center p-8 text-center hover:bg-white/5 transition-colors duration-500">
+                    <div className="anim-hero-stats-3 flex flex-col items-center justify-center p-8 text-center hover:bg-white/5 transition-colors duration-500">
                         <svg className="w-6 h-6 mb-4 text-[#00aaff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
                             <circle cx="12" cy="12" r="10" />
@@ -84,12 +88,12 @@ const Home = () => {
 
                 {/* Big Typography Section */}
                 <div className="flex flex-col items-center justify-center text-center pb-14 w-full">
-                    <h2 className="text-[12vw] md:text-[120px] lg:text-[100px] font-semibold uppercase leading-[0.8] tracking-[-0.04em] w-full text-white">
+                    <h2 className="reveal text-[12vw] md:text-[120px] lg:text-[100px] font-semibold uppercase leading-[0.8] tracking-[-0.04em] w-full text-white">
                         I'm KANISHK BASED<br />
                         IN MEErut, INDIA.
                     </h2>
 
-                    <p className="text-[13px] md:text-[15px] text-white/50 max-w-md text-center leading-relaxed font-medium tracking-wide mt-12">
+                    <p className="reveal text-[13px] md:text-[15px] text-white/50 max-w-md text-center leading-relaxed font-medium tracking-wide mt-12">
                         I crafted responsive interfaces ensuring seamless experiences across all devices.
                     </p>
                 </div>

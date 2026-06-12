@@ -32,3 +32,114 @@ html, body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* Custom circular fill hover effect for buttons */
+.btn-custom {
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.6s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-custom::before {
+  content: '';
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  width: 150%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  transform: translate(-50%, 0);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: -1;
+}
+
+.btn-custom:hover::before {
+  transform: translate(-50%, -75%);
+}
+
+/* Variant A: Outline (transparent bg, white text, white/muted border) */
+.btn-custom.btn-outline {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.btn-custom.btn-outline::before {
+  background-color: #ffffff;
+}
+
+.btn-custom.btn-outline:hover {
+  color: #000000 !important;
+  border-color: #ffffff;
+}
+
+/* Variant B: Filled (white bg, black text) */
+.btn-custom.btn-filled {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+}
+
+.btn-custom.btn-filled::before {
+  background-color: #000000;
+}
+
+.btn-custom.btn-filled:hover {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Hero entrance animations ── */
+@keyframes hero-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px) scaleY(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1.1);
+  }
+}
+
+@keyframes hero-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-hero-title {
+  animation: hero-slide-down 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.anim-hero-stats-1 {
+  animation: hero-slide-up 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+.anim-hero-stats-2 {
+  animation: hero-slide-up 1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+}
+
+.anim-hero-stats-3 {
+  animation: hero-slide-up 1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+}
+
+/* ── Scroll-reveal: fade-in from below ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import useReveal from '../hooks/useReveal';
 
 const achievements = [
     {
@@ -79,12 +80,14 @@ const CountUp = ({ end, suffix = "", duration = 2000 }) => {
 };
 
 const Achievements = () => {
+    const revealRef = useReveal();
+
     return (
-        <section className="w-full relative z-10 text-white">
+        <section ref={revealRef} className="w-full relative z-10 text-white">
             {/* ========== HERO ========== */}
             <div className="flex flex-col items-center justify-center mt-38 mb-32 px-4">
                 <h2 className="text-white/50 text-[9px] md:text-[13px] mb-4 font-medium tracking-[0.2em] uppercase">(MILESTONES & WINS)</h2>
-                <h1 className="text-[15vw] md:text-[10vw] xl:text-[130px] text-center font-semibold uppercase leading-[0.8] tracking-tight text-white m-0">
+                <h1 className="reveal text-[15vw] md:text-[10vw] xl:text-[130px] text-center font-semibold uppercase leading-[0.8] tracking-tight text-white m-0">
                     ACHIEVEMENTS
                 </h1>
             </div>

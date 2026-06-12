@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useReveal from '../hooks/useReveal';
 import MyPic from '../assets/MyPic.png';
 
 const Contact = () => {
@@ -20,7 +21,8 @@ const Contact = () => {
         setStatus({ type: '', message: '' });
 
         try {
-            const response = await fetch('http://localhost:5000/api/contact', {
+            const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+            const response = await fetch(`${API_URL}/api/contact`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
@@ -41,13 +43,15 @@ const Contact = () => {
         }
     };
 
+    const revealRef = useReveal();
+
     return (
-        <section className="w-full relative z-10 text-white min-h-screen flex flex-col pt-12">
+        <section ref={revealRef} className="w-full relative z-10 text-white min-h-screen flex flex-col pt-12">
             {/* Top Grid: Form and Image */}
             <div className="max-w-[1400px] w-full mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 flex-grow">
                 {/* Left: Form Side */}
                 <div className="flex flex-col pr-0 lg:pr-16 lg:border-r border-white/10 pt-8 pb-16">
-                    <h1 className="text-[10vw] md:text-[5vw] font-bold uppercase leading-[0.8] tracking-tight mb-6">
+                    <h1 className="reveal text-[10vw] md:text-[5vw] font-bold uppercase leading-[0.8] tracking-tight mb-6">
                         RING A BELL!
                     </h1>
                     <p className="text-[#a1a1aa] text-sm md:text-base font-medium leading-relaxed max-w-sm mb-12">
@@ -96,9 +100,9 @@ const Contact = () => {
                         <button 
                             type="submit" 
                             disabled={isSubmitting}
-                            className="w-full bg-white text-black font-bold text-xs uppercase tracking-[0.1em] py-4 rounded-xl mt-2 hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="btn-custom btn-filled w-full font-bold text-xs uppercase tracking-[0.1em] py-4 rounded-xl mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                            {isSubmitting ? 'Sending...' : 'Submit Now'}
+                            <span className="relative z-10">{isSubmitting ? 'Sending...' : 'Submit Now'}</span>
                         </button>
                     </form>
                 </div>

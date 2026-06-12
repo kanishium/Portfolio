@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
-import About from './pages/About'
 import Projects from './pages/Projects'
 import Experience from './pages/Experience'
 import Achievements from './pages/Achievements'
 import Contact from './pages/Contact'
+import WorkPage from './pages/WorkPage'
 import Navbar from './components/Navbar'
 import CustomCursor from './components/CustomCursor'
 import Footer from './components/Footer'
@@ -26,14 +26,14 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/work" element={<Projects />} />
+          <Route path="/work/:slug" element={<WorkPage />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/achievements" element={<Achievements />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
-      
+
       {!isContactPage && <Footer />}
     </div>
   )

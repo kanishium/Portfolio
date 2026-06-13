@@ -9,44 +9,36 @@ import WorkPage from './pages/WorkPage'
 import Navbar from './components/Navbar'
 import CustomCursor from './components/CustomCursor'
 import Footer from './components/Footer'
-
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-}
+import SmoothScroll from './components/SmoothScroll'
 
 const AppContent = () => {
   const location = useLocation();
   const isContactPage = location.pathname === '/contact';
 
   return (
-    <div className="min-h-screen bg-black flex flex-col selection:bg-white selection:text-black font-sans text-white relative">
-      <ScrollToTop />
-      {/* Global Grid Background */}
-      <div className="fixed inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0"></div>
+    <SmoothScroll>
+      <div className="min-h-screen bg-black flex flex-col selection:bg-white selection:text-black font-sans text-white relative">
+        {/* Global Grid Background */}
+        <div className="fixed inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0"></div>
 
-      <CustomCursor />
-      <Navbar />
+        <CustomCursor />
+        <Navbar />
 
-      <div className="flex-grow flex flex-col relative z-10 w-full">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/work" element={<Projects />} />
-          <Route path="/work/:slug" element={<WorkPage />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/achievements" element={<Achievements />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <div className="flex-grow flex flex-col relative z-10 w-full">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/work" element={<Projects />} />
+            <Route path="/work/:slug" element={<WorkPage />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/achievements" element={<Achievements />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+
+        {!isContactPage && <Footer />}
       </div>
-
-      {!isContactPage && <Footer />}
-    </div>
+    </SmoothScroll>
   )
 }
 

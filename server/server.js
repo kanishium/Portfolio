@@ -10,9 +10,10 @@ const app = express();
 
 // Middleware
 const allowedOrigins = [
-    'http://localhost:5173',    // Vite dev server
-    'http://localhost:4173',    // Vite preview
-    process.env.FRONTEND_URL   // Deployed frontend (e.g. https://your-site.vercel.app)
+    'http://localhost:5173',                        // Vite dev server
+    'http://localhost:4173',                        // Vite preview
+    'https://portfolio-sooty-psi-62.vercel.app',   // Deployed frontend
+    process.env.FRONTEND_URL                        // Custom domain (if any)
 ].filter(Boolean);
 
 app.use(cors({

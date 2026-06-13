@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useReveal from '../hooks/useReveal';
-import MyPic from '../assets/MyPic.png';
+import MyPic from '../assets/MyPic.webp';
 
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });

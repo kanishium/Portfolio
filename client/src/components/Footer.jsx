@@ -1,5 +1,5 @@
 import React from 'react';
-import MyPic from '../assets/MyPic.png';
+import MyPic from '../assets/MyPic.webp';
 import useReveal from '../hooks/useReveal';
 
 const Footer = () => {

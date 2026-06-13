@@ -1,6 +1,6 @@
 import React from 'react';
 import useReveal from '../hooks/useReveal';
-import MyPic from '../assets/MyPic.png';
+import MyPic from '../assets/MyPic.webp';
 import ToolsMarquee from '../components/ToolsMarquee';
 import PortfolioSection from '../components/PortfolioSection';
 import AboutSection from '../components/AboutSection';

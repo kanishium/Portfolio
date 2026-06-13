@@ -10,10 +10,8 @@ const app = express();
 
 // Middleware
 const allowedOrigins = [
-    'http://localhost:5173',                        // Vite dev server
-    'http://localhost:4173',                        // Vite preview
-    'https://portfolio-sooty-psi-62.vercel.app',   // Deployed frontend
-    process.env.FRONTEND_URL                        // Custom domain (if any)
+    'http://localhost:5173',    // Vite preview
+    process.env.FRONTEND_URL   // Deployed frontend (e.g. https://your-site.vercel.app)
 ].filter(Boolean);
 
 app.use(cors({
@@ -31,8 +29,8 @@ app.use(express.json());
 
 // Database Connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/portfolio')
-.then(() => console.log('Connected to MongoDB'))
-.catch(err => console.error('Failed to connect to MongoDB', err));
+    .then(() => console.log('Connected to MongoDB'))
+    .catch(err => console.error('Failed to connect to MongoDB', err));
 
 // Email Transporter Setup
 const transporter = nodemailer.createTransport({

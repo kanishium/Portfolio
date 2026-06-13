@@ -1,11 +1,11 @@
 import React from 'react';
-import MyPic from '../assets/MyPic.png';
-import github from '../assets/github.png';
-import swags from '../assets/swags.png';
-import leetcode from '../assets/leetcode.png';
-import Trion from '../assets/Trion.png';
-import MyPortfolio from '../assets/MyPortfolio.png';
-import professional from '../assets/professional.png';
+import MyPic from '../assets/MyPic.webp';
+import github from '../assets/github.webp';
+import swags from '../assets/swags.webp';
+import leetcode from '../assets/leetcode.webp';
+import Trion from '../assets/Trion.webp';
+import MyPortfolio from '../assets/MyPortfolio.webp';
+import professional from '../assets/professional.webp';
 
 const VoiceSection = () => {
     return (

@@ -1,8 +1,8 @@
-import AiResume from '../assets/AiResume.png';
-import AdmissionPlatform from '../assets/AdmissionPlatform.png';
-import Trion from '../assets/Trion.png';
-import MyPortfolio from '../assets/MyPortfolio.png';
-import BurgerNation from '../assets/BurgerNation.png';
+import AiResume from '../assets/AiResume.webp';
+import AdmissionPlatform from '../assets/AdmissionPlatform.webp';
+import Trion from '../assets/Trion.webp';
+import MyPortfolio from '../assets/MyPortfolio.webp';
+import BurgerNation from '../assets/BurgerNation.webp';
 
 const projects = [
     {

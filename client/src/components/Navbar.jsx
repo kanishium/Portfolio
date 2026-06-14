@@ -73,7 +73,7 @@ const Navbar = () => {
                         </button>
                     </Link>
                 </div>
-                
+
                 {/* Mobile version (only contact to save space, or stack them) */}
                 <div className="flex-1 flex justify-end items-center gap-2 sm:hidden">
                     <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
@@ -95,7 +95,7 @@ const Navbar = () => {
                         <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-[min(12vw,14vh)] md:text-[min(9vw,14vh)] xl:text-[min(7.5vw,110px)] font-bold leading-[0.85] tracking-wide uppercase whitespace-nowrap text-white/40 hover:text-white transition-colors duration-300">HOME</Link>
                         <Link to="/work" onClick={() => setIsMenuOpen(false)} className="text-[min(12vw,14vh)] md:text-[min(9vw,14vh)] xl:text-[min(7.5vw,110px)] font-bold leading-[0.85] tracking-wide uppercase whitespace-nowrap text-white hover:text-white/70 transition-colors duration-300">WORK</Link>
                         <Link to="/experience" onClick={() => setIsMenuOpen(false)} className="text-[min(12vw,14vh)] md:text-[min(9vw,14vh)] xl:text-[min(7.5vw,110px)] font-bold leading-[0.85] tracking-wide uppercase whitespace-nowrap text-white hover:text-white/70 transition-colors duration-300">EXPERIENCE</Link>
-                        <Link to="/achievements" onClick={() => setIsMenuOpen(false)} className="text-[min(12vw,14vh)] md:text-[min(9vw,14vh)] xl:text-[min(7.5vw,110px)] font-bold leading-[0.85] tracking-wide uppercase whitespace-nowrap text-white hover:text-white/70 transition-colors duration-300">ACHIEVEMENTS</Link>
+                        <Link to="/achievements" onClick={() => setIsMenuOpen(false)} className="text-[min(11vw,14vh)] md:text-[min(9vw,14vh)] xl:text-[min(7.5vw,110px)] font-bold leading-[0.85] tracking-wide uppercase whitespace-nowrap text-white hover:text-white/70 transition-colors duration-300">ACHIEVEMENTS</Link>
                         <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="text-[min(12vw,14vh)] md:text-[min(9vw,14vh)] xl:text-[min(7.5vw,110px)] font-bold leading-[0.85] tracking-wide uppercase whitespace-nowrap text-white hover:text-white/70 transition-colors duration-300">CONTACT</Link>
                     </div>
                 </div>

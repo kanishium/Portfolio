@@ -15,7 +15,7 @@ const AboutSection = () => {
                     <div className="absolute top-10 w-full px-8 max-w-[1400px] flex justify-between items-center text-[10px] md:text-[11px] uppercase tracking-[0.25em] font-bold text-white/50 pt-10 pb-8 border-t border-white/10 mt-12">
                         <div className="flex-1 text-left">03</div>
                         <div className="flex-1 text-center text-white">//WHO AM I</div>
-                        <div className="flex-1 text-right">SINCE 2000</div>
+                        <div className="flex-1 text-right">SINCE 2004</div>
                     </div>
 
                     {/* Big Text */}

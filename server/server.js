@@ -34,10 +34,20 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/portfolio
 
 // Email Transporter Setup
 const transporter = nodemailer.createTransport({
-    service: 'gmail', // Change this if you use another provider
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
+        pass: process.env.EMAIL_PASS,
+    },
+});
+
+transporter.verify(function (error, success) {
+    if (error) {
+        console.log("SMTP Error:", error);
+    } else {
+        console.log("SMTP Server Ready");
     }
 });
 

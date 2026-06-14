@@ -13,18 +13,8 @@ const allowedOrigins = [
     'http://localhost:5173',    // Vite preview
     process.env.FRONTEND_URL   // Deployed frontend (e.g. https://your-site.vercel.app)
 ].filter(Boolean);
-
-app.use(cors({
-    origin: function (origin, callback) {
-        // Allow requests with no origin (e.g. Postman, server-to-server)
-        if (!origin) return callback(null, true);
-        if (allowedOrigins.includes(origin)) {
-            return callback(null, true);
-        }
-        return callback(new Error('Not allowed by CORS'));
-    },
-    credentials: true
-}));
+console.log("Allowed Origins:", allowedOrigins);
+app.use(cors());
 app.use(express.json());
 
 // Database Connection
